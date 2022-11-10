@@ -1,0 +1,32 @@
+.container {
+    background: rgb(116, 116, 116);
+    padding: 0 10px;
+    height: 100vh;
+}
+
+.inputContainer {
+    display: flex;
+}
+
+.messageContainer {
+    display: flex;
+    align-items: center;
+    background: rgb(248, 255, 204);
+    margin-top: 20px;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.avatarContainer {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    margin-right: 20px;
+}
+
+.avatarWrapper {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    object-fit: cover;
+}

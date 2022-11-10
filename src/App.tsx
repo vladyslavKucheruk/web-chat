@@ -1,26 +1,36 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { Route, Routes } from 'react-router-dom';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+import ProtectedRoute from './components/ProtectedRoute.component';
+import { useAuthContext } from './context/auth-context';
+import Login from './features/auth/Login.component';
+import Chat from './features/chat/Chat.component';
+import Dashboard from './features/dashboard/Dashboard.component';
+
+const App = () => {
+    const { isAuth } = useAuthContext();
+
+    return (
+        <Routes>
+            <Route
+                path=""
+                element={
+                    <ProtectedRoute isAllowed={false}>
+                        <Dashboard />
+                    </ProtectedRoute>
+                }
+            />
+            <Route path="auth" element={<Login />} />
+            <Route
+                path="chat"
+                element={
+                    <ProtectedRoute isAllowed={isAuth} redirectPath="../auth">
+                        <Chat />
+                    </ProtectedRoute>
+                }
+            />
+            <Route path="*" element={<div>404</div>} />
+        </Routes>
+    );
+};
 
 export default App;
