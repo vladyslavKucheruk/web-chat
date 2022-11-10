@@ -1,4 +1,4 @@
-name: Releases
+name: releases
 on:
     push:
         branches:
@@ -9,20 +9,9 @@ jobs:
         runs-on: ubuntu-latest
 
         steps:
-            - uses: actions/checkout@v3
-
-            - name: conventional Changelog Action
-              id: changelog
-              uses: TriPSs/conventional-changelog-action@v3.7.1
+            - uses: google-github-actions/release-please-action@v3
+              id: release
               with:
-                  github-token: ${{ secrets.CHANGELOG_RELEASE }}
-                  version-file: './package.json,./package-lock.json'
-
-            - name: create release
-              uses: actions/create-release@v1
-              if: ${{ steps.changelog.outputs.skipped == 'false' }}
-              with:
-                  GITHUB_TOKEN: ${{ secrets.CHANGELOG_RELEASE }}
-                  tag_name: ${{ steps.changelog.outputs.tag }}
-                  release_name: ${{ steps.changelog.outputs.tag }}
-                  body: ${{ steps.changelog.outputs.clean_changelog }}
+                  token: ${{ secrets.GITHUB_TOKEN }}
+                  release-type: node
+                  package-name: 'websocket-chat'
