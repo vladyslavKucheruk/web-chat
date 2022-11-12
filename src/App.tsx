@@ -5,6 +5,7 @@ import { useAuthContext } from './context/auth-context';
 import Login from './features/auth/Login.component';
 import Chat from './features/chat/Chat.component';
 import Dashboard from './features/dashboard/Dashboard.component';
+import PageNotFound from './features/page-not-found/PageNotFound.component';
 
 const App = () => {
     const { isAuth } = useAuthContext();
@@ -28,7 +29,7 @@ const App = () => {
                     </ProtectedRoute>
                 }
             />
-            <Route path="*" element={<div>404</div>} />
+            <Route path="*" element={<PageNotFound />} />
         </Routes>
     );
 };
