@@ -37,10 +37,10 @@ const Login = () => {
 
     return (
         <div className={styles.container}>
-            <Input.Wrapper data-testid="email-input" label="Email" required>
+            <Input.Wrapper className={styles.input_container} data-testid="email-input" label="Email" required>
                 <Input name="email" value={values.email} onChange={onChange} />
             </Input.Wrapper>
-            <Input.Wrapper data-testid="email-input" label="Password" required>
+            <Input.Wrapper className={styles.input_container} data-testid="email-input" label="Password" required>
                 <Input name="password" value={values.password} onChange={onChange} />
             </Input.Wrapper>
             <Button onClick={handleAuthClick} variant="gradient" gradient={{ from: 'indigo', to: 'cyan' }}>
@@ -49,7 +49,7 @@ const Login = () => {
 
             {isLoading && (
                 <Notification
-                    sx={{ position: 'absolute', right: 5, bottom: 5 }}
+                    className={styles.notification_container}
                     loading={isLoading}
                     title="Server is getting your request"
                     disallowClose

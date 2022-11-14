@@ -15,3 +15,31 @@ jobs:
                   token: ${{ secrets.GITHUB_TOKEN }}
                   release-type: node
                   package-name: 'websocket-chat'
+
+        outputs:
+            release_created: ${{ steps.release.outputs.release_created }}
+
+    tests:
+        needs: changelog
+        if: ${{ needs.changelog.outputs.release_created }}
+
+        runs-on: ubuntu-latest
+        strategy:
+            matrix:
+                node-version: [18.x]
+        steps:
+            - uses: actions/checkout@v3
+            - name: Staring Node.js ${{ matrix.node-version }}
+              uses: actions/setup-node@v3
+              with:
+                  node-version: ${{ matrix.node-version }}
+                  cache: npm
+
+            - name: install modules
+              run: npm ci
+
+            - name: build project
+              run: npm run build
+
+            - name: unit test
+              run: npm run test
