@@ -1,4 +1,4 @@
-In the project directory, you can run:
+To run the project, just run the command below:
 
 ### `yarn start`
 
