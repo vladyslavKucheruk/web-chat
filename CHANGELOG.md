@@ -1,5 +1,13 @@
 # Changelog
 
+## [1.2.0](https://github.com/vladyslavKucheruk/web-chat/compare/v1.1.0...v1.2.0) (2022-11-14)
+
+
+### Features
+
+* :rocket: New release ([8910325](https://github.com/vladyslavKucheruk/web-chat/commit/8910325f16ce74cc0e66dcf9ad29f16091976534))
+* :rocket: Release test 2.0 ([855840c](https://github.com/vladyslavKucheruk/web-chat/commit/855840ce052816fd9aff7dd6602122cd6177c356))
+
 ## [1.1.0](https://github.com/vladyslavKucheruk/web-chat/compare/v1.0.0...v1.1.0) (2022-11-14)
 
 
