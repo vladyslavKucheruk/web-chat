@@ -1,5 +1,13 @@
 # Changelog
 
+## [1.1.0](https://github.com/vladyslavKucheruk/web-chat/compare/v1.0.0...v1.1.0) (2022-11-14)
+
+
+### Features
+
+* **page-not-found:** Added separate 404 component ([65897a2](https://github.com/vladyslavKucheruk/web-chat/commit/65897a2ea7697e1dc60e89db133164083fa595da))
+* Updated release please steps ([926e655](https://github.com/vladyslavKucheruk/web-chat/commit/926e6558a46bfe88908ce3f237742fb90fa8b29b))
+
 ## 1.0.0 (2022-11-10)
 
 
