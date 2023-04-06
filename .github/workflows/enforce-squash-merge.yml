@@ -1,0 +1,25 @@
+name: Enforce Squash Merges
+
+on:
+  pull_request:
+    types: [opened, edited, reopened, synchronize]
+
+jobs:
+  enforce-squash-merge:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check merge method
+        id: check-merge-method
+        run: |
+          if [[ ${{ github.event.pull_request.merge_method }} == "squash" ]]; then
+            echo "Squash merge detected"
+            exit 0
+          else
+            echo "Non-squash merge detected"
+            exit 1
+          fi
+      - name: Squash merge
+        if: steps.check-merge-method.outcome == 'failure'
+        uses: tecfu/squash-merge-action@v1
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}

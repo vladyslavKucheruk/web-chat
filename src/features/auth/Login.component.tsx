@@ -1,8 +1,8 @@
 import { Button, Input, Notification } from '@mantine/core';
-import { useMutation } from '@tanstack/react-query';
 import { useNavigate } from 'react-router-dom';
-import { useAuthContext } from '../../context/auth-context';
 
+import { useAuthContext } from '../../context/auth-context';
+import { useAuthUser } from '../../hooks/api/auth-user';
 import { useForm } from '../../hooks/use-form';
 import { AuthUser } from '../../interfaces/auth';
 import styles from './styles.module.css';
@@ -24,14 +24,14 @@ const Login = () => {
         }).then((response) => response.json());
     };
 
-    const { mutate, isLoading } = useMutation<AuthUser>(handleSubmit, {
+    const {mutate, isLoading} = useAuthUser<AuthUser>(handleSubmit, {
         onSuccess: (data) => {
             if (Number.isInteger(data.id)) {
                 setIsAuth(true);
                 return navigate('/chat', { replace: true });
             }
         },
-    });
+    })
 
     const handleAuthClick = () => mutate();
 
