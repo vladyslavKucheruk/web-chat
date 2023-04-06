@@ -22,7 +22,7 @@ jobs:
         run: yarn install
 
       - name: build project
-        run: yarn run build
+        run: yarn build
 
       - name: unit test
-        run: yarn run test
+        run: yarn test
