@@ -1,5 +1,19 @@
 # Changelog
 
+## [1.4.0](https://github.com/vladyslavKucheruk/web-chat/compare/v1.3.0...v1.4.0) (2023-04-06)
+
+
+### Features
+
+* :memo: Updated instructions in README ([541fc8e](https://github.com/vladyslavKucheruk/web-chat/commit/541fc8e40d7b7ab22dbb908898a13725ee3309e2))
+* Page not found ([df2af5c](https://github.com/vladyslavKucheruk/web-chat/commit/df2af5cce0048ba70fd004b387e5b12d05d319d9))
+* Run tests on open PR & Make release on merge ([ddfee84](https://github.com/vladyslavKucheruk/web-chat/commit/ddfee84a9f49fee567318287f6835656eda8c431))
+
+
+### Bug Fixes
+
+* App tests are fixed ([#16](https://github.com/vladyslavKucheruk/web-chat/issues/16)) ([65bb972](https://github.com/vladyslavKucheruk/web-chat/commit/65bb972bad7e03c1918980c12daec31273b1dd99))
+
 ## [1.3.0](https://github.com/vladyslavKucheruk/web-chat/compare/v1.2.0...v1.3.0) (2022-11-14)
 
 
